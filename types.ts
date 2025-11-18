@@ -1,26 +1,19 @@
-
-export interface SubTopic {
-  title: string;
-  content: (string | { type: 'list'; items: string[] })[];
-}
-
-export interface TimelinePeriod {
-  id: string;
-  title: string;
-  date: string;
-  badgeColor: string;
-  subTopics: SubTopic[];
+export interface MapQuote {
+  text: string;
+  author: string;
 }
 
 export interface MapLocation {
   id: string;
   name: string;
-  coords: { top: string; left: string };
-  description: string;
-  imageUrl?: string;
-  keyEvents?: string[];
-  quote?: {
-    text: string;
-    author: string;
+  // HAPUS imageUrl, GANTI dengan color
+  // imageUrl?: string;  <-- Tidak dipakai lagi
+  color: string;      // <-- Wajib ada (misal: 'bg-red-500')
+  coords: {
+    top: string;
+    left: string;
   };
+  description: string;
+  keyEvents: string[];
+  quote?: MapQuote;
 }
